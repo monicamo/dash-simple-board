@@ -14,8 +14,15 @@ export class ServerStatusComponent implements AfterViewInit, OnInit {
   private destroyRef = inject(DestroyRef);
 
   constructor() {
-    effect( () => {
-      console.log(this.currentStatus())
+    effect( (onCleanup) => {
+      console.log(this.currentStatus());
+      // const timer = setTimeout(() => {
+      //   console.log(`Current number of tasks: ${tasks().length}`);
+      // }, 1000);
+      // onCleanup(() => {
+      //   clearTimeout(timer);
+      // });
+
     });
     console.log(this.currentStatus())
   }
