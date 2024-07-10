@@ -26,12 +26,12 @@ export class ControlComponent implements AfterViewInit {
   private control = contentChild<ElementRef<HTMLInputElement | HTMLTextAreaElement>>('input');
 
   constructor() {
-    afterRender(() => {
-      console.log('afterRender');
-    });
-    afterNextRender( () => {
-      console.log('afterNextRender');
-    });
+    // afterRender(() => {
+    //   console.log('afterRender');
+    // });
+    // afterNextRender( () => {
+    //   console.log('afterNextRender');
+    // });
   }
 
   ngAfterViewInit(): void {

@@ -4,6 +4,20 @@
   <button (click)="onChangeLifecycleInputText()"> Change Lifecycle Input Text</button>
   <button (click)="onToggleLifecycleComponentVisibility()"> Toggle Lifecycle Component Visibility</button>
 </div>
+<div style="display: flex; justify-content: space-between; width: 80%; margin: 10px auto;">
+  <div id="inputs">
+    <p>
+      <label>Width</label>
+      <input type="number" step="1.0" [(ngModel)]="rectSize.width" />
+    </p>
+    <p>
+      <label>Height</label>
+      <input type="number" step="1.0" [(ngModel)]="rectSize.height" />
+    </p>
+  </div>
+  <app-rect [(size)]="rectSize" />
+
+</div>
 
 @if (lifecycleComponentIsVisible) {
   <app-lifecycle [text]="lifecycleInputText" />
