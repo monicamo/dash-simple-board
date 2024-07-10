@@ -1,5 +1,13 @@
 <app-header />
 
+<div style="display: flex; justify-content: space-between; width: 80%; margin: 0 auto;">
+  <button (click)="onChangeLifecycleInputText()"> Change Lifecycle Input Text</button>
+  <button (click)="onToggleLifecycleComponentVisibility()"> Toggle Lifecycle Component Visibility</button>
+</div>
+
+@if (lifecycleComponentIsVisible) {
+  <app-lifecycle [text]="lifecycleInputText" />
+}
 <main>
   <div id="dashboard">
     <app-dashboard-item [image]="{ src: 'status.png', alt: 'A signal symbol' }" title="Server Status">
