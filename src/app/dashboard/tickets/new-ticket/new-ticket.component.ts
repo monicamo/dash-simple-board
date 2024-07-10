@@ -2,7 +2,6 @@ import { AfterViewInit, Component, ElementRef, EventEmitter, OnInit, output, Out
 import { ButtonComponent } from '../../../shared/button/button.component';
 import { ControlComponent } from '../../../shared/control/control.component';
 import { FormsModule } from '@angular/forms';
-import { Ticket } from '../tickets.model';
 
 @Component({
   selector: 'app-new-ticket',
@@ -18,6 +17,9 @@ export class NewTicketComponent implements AfterViewInit, OnInit {
   // @Output() add = new EventEmitter<{ title: string, text: string }>();
   add = output<{ title: string, text: string }>();
 
+  enteredTitle = '';
+  enteredText = '';
+
   ngOnInit(): void {
     console.log(' ngOnInit ')
     console.dir(this.form().nativeElement)
@@ -28,8 +30,11 @@ export class NewTicketComponent implements AfterViewInit, OnInit {
     console.dir(this.form().nativeElement)
   }
 
-  onSubmit(title: string, ticketText: string) {
-    this.form().nativeElement.reset();
-    this.add.emit({ title: title, text: ticketText});
+  onSubmit() {
+    // this.form().nativeElement.reset();
+    this.add.emit({ title: this.enteredTitle, text: this.enteredText});
+    this.enteredTitle = '';
+    this.enteredText = '';
+
   }
 }
