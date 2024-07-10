@@ -9,7 +9,7 @@ import { Component, input, output, signal } from '@angular/core';
   styleUrl: './ticket.component.css'
 })
 export class TicketComponent {
-  data = input.required<Ticket>();
+  data = input.required<Ticket>({ });
   close = output();
   detailsVisible = signal(false);
 
