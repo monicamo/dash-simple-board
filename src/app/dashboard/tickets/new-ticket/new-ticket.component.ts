@@ -23,8 +23,8 @@ export class NewTicketComponent implements AfterViewInit, OnInit {
     console.log(' ngAfterViewInit ')
     console.dir(this.form().nativeElement)
   }
-  onSubmit(title: string, ticketText: string) {
 
+  onSubmit(title: string, ticketText: string) {
     this.form().nativeElement.reset();
   }
 }
